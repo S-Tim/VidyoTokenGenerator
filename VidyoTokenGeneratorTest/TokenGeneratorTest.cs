@@ -12,12 +12,9 @@ namespace VidyoTokenGeneratorTest
             string key = "rUlaMASgt1Byi4Kp3sKYDeQzo";
             string appId = "ApplicationID";
             string username = "user1";
-            long expiresInSecs = 0;
             string expiresAt = "2055-10-27T10:54:22Z";
 
-            string[] args = { "key=" + key, "appID=" + appId, "userName=" + username, "expiresInSecs=" + expiresInSecs, "expiresAt=" + expiresAt};
-
-            TokenGenerator tg = new TokenGenerator(args);
+            TokenGenerator tg = new TokenGenerator(key, appId, username, expiresAt);
 
             string token = tg.GenerateToken();
 

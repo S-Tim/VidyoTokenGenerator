@@ -6,46 +6,26 @@ namespace VidyoTokenGenerator
 {
     public class TokenGenerator
     {
-        public readonly string Key;
-        public readonly string AppId;
-        public readonly string UserName;
-        public readonly long ExpiresInSecs;
-        public readonly string ExpiresAt;
+        public string Key { get; set; }
+        public string AppId { get; set; }
+        public string Username { get; set; }
+        public long ExpiresInSecs { get; set; }
+        public string ExpiresAt { get; set; }
 
-        public TokenGenerator(string[] args)
+        public TokenGenerator(string key, string appId, string username, long expiresInSecs)
         {
-            string delimStr = "=";
+            Key = key;
+            AppId = appId;
+            Username = username;
+            ExpiresInSecs = expiresInSecs;
+        }
 
-            foreach (string arg in args)
-            {
-                string[] split = arg.Split(delimStr.ToCharArray(), 2);
-
-                if (split[0].Contains("key"))
-                {
-                    Key = split[1];
-                }
-                else if (split[0].Contains("appID"))
-                {
-                    AppId = split[1];
-                }
-                else if (split[0].Contains("userName"))
-                {
-                    UserName = split[1];
-                }
-                else if (split[0].Contains("vCardFile"))
-                {
-                    // NOT SUPPORTED
-                    // Path to the XML file containing a vCard for the user
-                }
-                else if (split[0].Contains("expiresInSecs"))
-                {
-                    ExpiresInSecs = long.Parse(split[1]);
-                }
-                else if (split[0].Contains("expiresAt"))
-                {
-                    ExpiresAt = split[1];
-                }
-            }
+        public TokenGenerator(string key, string appId, string username, string expiresAt)
+        {
+            Key = key;
+            AppId = appId;
+            Username = username;
+            ExpiresAt = expiresAt;
         }
 
         /// <summary>
@@ -136,7 +116,7 @@ namespace VidyoTokenGenerator
 
         public string GenerateToken()
         {
-            return GenerateToken(Key, AppId, UserName, ExpiresInSecs, ExpiresAt);
+            return GenerateToken(Key, AppId, Username, ExpiresInSecs, ExpiresAt);
         }
     }
 }
