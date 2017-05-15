@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>PclVidyoTokenGenerator</id>
+    <version>1.0.0</version>
+    <authors>Tim Silhan</authors>
+    <owners>Tim Silhan</owners>
+    <projectUrl>https://github.com/S-Tim/VidyoTokenGenerator</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Vidyo token generator PCL implementation</description>
+    <copyright>Copyright 2017</copyright>
+    <dependencies>
+      <dependency id="PCLCrypto" version="2.0.147" />
+    </dependencies>
+  </metadata>
+  <files>
+	<!-- portable -->
+	<file src="VidyoTokenGenerator\bin\Release\VidyoTokenGenerator.dll" target="lib\portable-net45+win+wp80+MonoAndroid10+MonoTouch10\VidyoTokenGenerator.dll" />
+  </files>
+</package>
