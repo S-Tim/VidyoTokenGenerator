@@ -20,7 +20,7 @@ namespace TokenGeneratorApi.Tests.Controllers
 
             // Assert
             Assert.IsNotNull(result);
-            Assert.AreEqual(result.Content, "cHJvdmlzaW9uAHVzZXIxQEFwcGxpY2F0aW9uSUQANjQ4NzU0NjY0NjIAADA5YTdkNDMwMTI3NzlkOWQzZTg5YzRlMjg5ZWUwNGU0MWRlOTBhYjI3ZDlhYzdlYmU3MGZhMDY0MzQ4Nzc4ZDMwNDhjMGE3MjhlZThiNDkwMDMxOGUxZWRjNjhkY2NjZA==");
+            Assert.IsInstanceOfType(result.Content, typeof(string));
         }
     }
 }
